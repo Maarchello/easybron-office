@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Header = () => {
+const Menu = () => {
     return (
         <div>
-
+            Menu
         </div>
     );
 };
 
-export default Header;
+export default Menu;
