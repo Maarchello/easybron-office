@@ -45,17 +45,17 @@ const Topbar = () => {
                     )}
                 </IconButton>
 
-                <IconButton>
-                    <NotificationsOutlinedIcon />
-                </IconButton>
+                {/*<IconButton>*/}
+                {/*    <NotificationsOutlinedIcon />*/}
+                {/*</IconButton>*/}
 
-                <IconButton>
-                    <SettingsOutlinedIcon />
-                </IconButton>
+                {/*<IconButton>*/}
+                {/*    <SettingsOutlinedIcon />*/}
+                {/*</IconButton>*/}
 
-                <IconButton>
-                    <PersonOutlinedIcon />
-                </IconButton>
+                {/*<IconButton>*/}
+                {/*    <PersonOutlinedIcon />*/}
+                {/*</IconButton>*/}
 
             </Box>
 

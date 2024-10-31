@@ -1,14 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import {ColorModeContext, useMode} from "./theme";
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import Topbar from "./pages/global/Topbar";
 import Dashboard from "./pages/dashboard";
-import Employees from "./pages/employees";
-import Menu from './pages/menu';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Project from './pages/projects';
+import {Route, Routes} from "react-router-dom";
 import Sidebar from "./pages/global/Sidebar";
-import Restaurants from "./pages/restaurants";
+import Mocks from "./pages/mocks";
+import Mappings from "./pages/mappings";
+import ProjectMethod from "./pages/methods";
+import MappingForm from "./pages/mappings/mappingForm";
 
 function App() {
 
@@ -25,10 +26,12 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              <Route path="/" element={isAdmin ? <Restaurants /> : <Dashboard/>}></Route>
-              <Route path="/employees" element={<Employees/>}></Route>
-              <Route path="/menu" element={<Menu/>}></Route>
-              <Route path="/restaurants" element={<Restaurants/>}></Route>
+              <Route path="/" element={isAdmin ? <Mocks /> : <Dashboard/>}></Route>
+              <Route path="/projects" element={<Project/>}></Route>
+              <Route path="/methods" element={<ProjectMethod />}></Route>
+              <Route path="/mocks" element={<Mocks/>}></Route>
+              <Route path="/mappings" element={<Mappings/>}></Route>
+              <Route path="/mapping-form" element={<MappingForm/>}></Route>
             </Routes>
           </main>
         </div>

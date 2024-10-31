@@ -5,11 +5,16 @@ import {Box, IconButton, Typography, useTheme} from "@mui/material";
 import {Link} from "react-router-dom";
 import {tokens} from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 import PeopleOutlinedIcon from "@mui/icons-material/People";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import {IntegrationInstructions} from "@mui/icons-material";
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import FolderIcon from '@mui/icons-material/Folder';
+import FunctionsIcon from '@mui/icons-material/Functions';
 
 const Item = ({title, to, icon, selected, setSelected}) => {
     const theme = useTheme();
@@ -27,51 +32,37 @@ const Item = ({title, to, icon, selected, setSelected}) => {
     )
 }
 
-const AdminSidebar = ({isCollapsed, selected, setSelected}) => {
+const InnerSidebar = ({isCollapsed, selected, setSelected}) => {
     return (
         <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-                title="Список заведений"
-                to="/restaurants"
-                icon={<HomeOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-            />
-        </Box>
-    )
-}
-
-const UserSidebar = ({isCollapsed, selected, setSelected}) => {
-    return (
-        <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-            <Item
-                title="Заведение"
-                to="/"
-                icon={<HomeOutlinedIcon />}
+                title="Проекты"
+                to="/projects"
+                icon={<FolderIcon />}
                 selected={selected}
                 setSelected={setSelected}
             />
 
             <Item
-                title="Меню"
-                to="/menu"
-                icon={<RestaurantMenuIcon />}
+                title="Методы"
+                to="/methods"
+                icon={<FunctionsIcon />}
                 selected={selected}
                 setSelected={setSelected}
             />
 
             <Item
-                title="Сотрудники"
-                to="/employees"
-                icon={<Groups2Icon />}
+                title="Моки"
+                to="/mocks"
+                icon={<IntegrationInstructions />}
                 selected={selected}
                 setSelected={setSelected}
             />
 
             <Item
-                title="Брованирования"
-                to="/bookings"
-                icon={<MenuBookIcon />}
+                title="Маппинги"
+                to="/mappings"
+                icon={<AccountTreeIcon />}
                 selected={selected}
                 setSelected={setSelected}
             />
@@ -122,7 +113,7 @@ const Sidebar = () => {
                                 ml="15px">
 
                                 <Typography variant="h3" color={colors.grey[100]}>
-                                    EasyBron
+                                    SmartMock
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                                     <MenuOutlinedIcon/>
@@ -134,9 +125,7 @@ const Sidebar = () => {
 
                     {/*MENU ITEMS*/}
 
-                    {role === 'admin' ? <AdminSidebar isCollapsed = {isCollapsed} selected = {selected} setSelected = {setSelected} />
-                        : <UserSidebar isCollapsed = {isCollapsed} selected = {selected} setSelected = {setSelected} /> }
-
+                    <InnerSidebar isCollapsed = {isCollapsed} selected = {selected} setSelected = {setSelected} />
 
                 </Menu>
 
